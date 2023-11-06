@@ -18,7 +18,7 @@ def login(request):
             import sqlite3
             name = form.cleaned_data['name']
             password = form.cleaned_data['password']
-            con = sqlite3.connect('hackathonSQLite.db')
+            con = sqlite3.connect('hackathonSite/hackathonSite/hackathonSQLite.db')
             cur = con.cursor()
             cur.execute(f'''SELECT id, password from login WHERE name = "{name}" ''')
             passwordTrue = cur.fetchall()
@@ -63,7 +63,7 @@ def logup(request):
                 name = form.cleaned_data['name']
                 email = form.cleaned_data['email']
                 email = email.replace('@', '|')
-                con = sqlite3.connect('hackathonSQLite.db')
+                con = sqlite3.connect('hackathonSite/hackathonSite/hackathonSQLite.db')
                 cur = con.cursor()
                 checkName = checkName(cur)
                 if checkName[0]:
