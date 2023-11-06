@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+  <header class="header">
+    <div class="nav-img">
+        <nav class="nav">
+            <ul class="list">
+                <li class="item"><a  href="http://127.0.0.1:8080/" class="link">Домой</a></li>
+                <li class="item"><a  href="http://127.0.0.1:8080/aboutUs" class="link">О нас</a></li>
+                <li class="item"><a  href="http://127.0.0.1:8080/aboutProject" class="link">О проекте</a></li>
+                <li class="item"><a   href="http://127.0.0.1:8080/faq" class="link">FAQ</a></li>
+            </ul>
+        </nav>
+</header>
+<p class="vhod">Вход</p>
+<form method="post" id="inputForm">
+  {% csrf_token %}
+  {{ form.name }}
+  {{ form.password }}
+  <input type="submit" id="button">
+</form>
+<b>{{out}}</b>
+</body>
+</html>
